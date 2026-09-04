@@ -6,7 +6,7 @@ import About from "./Pages/About";
 import Course from "./Pages/Course";
 import JamesKid from "./Pages/JamesKid";
 import NotfoundPage from "./Pages/NotfoundPage";
-
+import { NavLink } from "react-router-dom";
 
 function App() {
 
@@ -17,10 +17,34 @@ function App() {
       <nav className="flex justify-around text-3xl">
         <h1>Suka</h1>
         <div className="flex gap-10">
-          <Link to='/'>Home</Link>
+          {/* <Link to='/'>Home</Link>
           <Link to='/contact'>Contact</Link>
           <Link to='/documentation'>Documentation</Link>
-          <Link to='/about' >About</Link>
+          <Link to='/about' >About</Link> */}
+
+          <NavLink to='/'
+          style={({isActive})=>({
+            color:isActive?"red":"black"
+          })}
+            >Home</NavLink>
+          <NavLink
+           to='/contact'
+           style={({isActive})=>({
+            color:isActive?"red":"black"
+          })}
+           >Contact</NavLink>
+          <NavLink
+           to='/documentation'
+           style={({isActive})=>({
+            color:isActive?"red":"black"
+          })}
+           >Documentation</NavLink>
+          <NavLink
+           to='/about' 
+           style={({isActive})=>({
+            color:isActive?"red":"black"
+          })}
+           >About</NavLink>
         </div>
       </nav>
 
